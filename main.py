@@ -12,6 +12,7 @@ print('注意:最新语法[Tool.x]')
 print('配置文件:FunctionConfig.ini;每次修改完请重启')
 
 
+# 函数类
 class func:
     def __init__(self):
         self.FileName = 'FunctionConfig.ini'
