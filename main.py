@@ -22,7 +22,7 @@ while True:
         y = eval(input1)
         # 创建函数窗口
         plt.plot(x, y)
-        plt.title('y=' + str(input1))  # 标题
+        plt.title('y=' + input1)  # 标题
         plt.grid()  # 网格
         plt.show()  # 打开
     except Exception as ex:
