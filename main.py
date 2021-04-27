@@ -18,14 +18,17 @@ class func:
         if self.isExisits() == False:
             self.ConfigWrite()
         self.ConfigSet = self.ConfigRead()
+        # 初始x
         self.x = np.arange(int(self.ConfigSet['Xms']), int(self.ConfigSet['Xmx']))
 
+    # 启动
     def open(self, y, input):
         plt.plot(self.x, y, color=self.ConfigSet['Color'])
         plt.title('y=' + input)  # 标题
         plt.grid()  # 网格
         plt.show()  # 打开
 
+    # 写入配置
     def ConfigWrite(self):
         con = ConfigParser()
         con['Plot'] = {'xms': '-10',
@@ -33,9 +36,11 @@ class func:
                        'LineColor': 'Blue'}
         con.write(open(self.FileName, 'w'))
 
+    # 判断配置是否存在
     def isExisits(self):
         return os.path.exists(self.FileName)
 
+    # 读取配置
     def ConfigRead(self):
         con = ConfigParser()
         con.read(self.FileName)
@@ -46,6 +51,7 @@ class func:
         return Set
 
 
+# 初始化
 Tool = func()
 while True:
     try:
@@ -57,7 +63,7 @@ while True:
             continue
         # 执行函数
         y = eval(input1)
-        # 创建函数窗口
+        # 打开函数
         Tool.open(y, input1)
 
     except Exception as ex:
