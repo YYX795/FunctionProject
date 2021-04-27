@@ -6,7 +6,6 @@ import numpy as np
 # 创建坐标系的初始长度
 x = np.arange(-10, 10)
 print('				函数查看器[BETA3.0]')
-print('此软件只提供产看并不会显示所有的坐标系')
 print('注意事项:', '+加,-减,*乘除,/除;', '三角函数:np.tan(),np.sin(),np.cos[PS:后面还可以加h];', '派为np.pi;')
 print('不能使用数学写法要把每个符号写完整!')
 print('x不要大写!')
