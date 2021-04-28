@@ -5,11 +5,11 @@ from time import asctime
 import matplotlib.pyplot as plt
 import numpy as np
 
-print('				函数查看器[BETA3.1.1]')
+print('				函数查看器[BETA3.2]')
 print('注意事项:', '+加,-减,*乘除,/除;', '三角函数:np.tan(),np.sin(),np.cos[PS:后面还可以加h];', '派为np.pi;')
 print('不能使用数学写法要把每个符号写完整!')
-print('注意:最新语法[Tool.x]')
-print('配置文件:FunctionConfig.ini;每次修改完请重启')
+print('注意:x不要大写')
+print('警告:[配置文件:FunctionConfig.ini;每次修改完请重启;切记不要乱改,否者后果自负]')
 
 
 # 函数类
@@ -48,6 +48,8 @@ class func:
         Xms = con['Plot']['xms']
         Xmx = con['Plot']['xmx']
         Color = con['Plot']['linecolor']
+        if len(Xms) == 0 or len(Xmx) == 0 or len(Color) == 0:
+            self.ConfigWrite()
         Set = {'Xms': Xms, 'Xmx': Xmx, 'Color': Color}
         return Set
 
