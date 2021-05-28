@@ -71,7 +71,6 @@ while True:
             # 输入的数不为空
             if len(input1) == 0:
                 print('错误:不能为空!')
-                plt.close()
                 flag = False
                 break
             # 执行函数
@@ -84,4 +83,3 @@ while True:
     except Exception as ex:
         with open('ERROR.log', 'a') as f:
             f.write('错误:' + str(ex) + '(Time:' + asctime() + ')' + '\n')
-        plt.close()
