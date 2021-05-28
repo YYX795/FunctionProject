@@ -10,6 +10,7 @@ print('注意事项:', '+加,-减,*乘除,/除;', '三角函数:np.tan(),np.sin(
 print('不能使用数学写法要把每个符号写完整!')
 print('注意:x不要大写|或使用Tool.x')
 print('警告:[配置文件:FunctionConfig.ini;每次修改完请重启;切记不要乱改,否者后果自负]')
+print('配置提示:[xmx:函数最大值,xms:最小值,LineColor:函数曲线颜色,LineNum:函数的数量]')
 
 
 # 函数类
