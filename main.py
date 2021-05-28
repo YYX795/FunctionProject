@@ -5,7 +5,7 @@ from time import asctime
 import matplotlib.pyplot as plt
 import numpy as np
 
-print('				函数查看器[1.0]')
+print('				函数查看器[2.0]')
 print('注意事项:', '+加,-减,*乘除,/除;', '三角函数:np.tan(),np.sin(),np.cos[PS:后面还可以加h];', '派为np.pi;')
 print('不能使用数学写法要把每个符号写完整!')
 print('注意:x不要大写|或使用Tool.x')
@@ -62,6 +62,7 @@ class func:
 # 初始化
 Tool = func()
 x = Tool.x
+flag = True
 while True:
     try:
         for i in range(int(Tool.ConfigSet['LineNum'])):
@@ -70,12 +71,17 @@ while True:
             # 输入的数不为空
             if len(input1) == 0:
                 print('错误:不能为空!')
-                continue
+                plt.close()
+                flag = False
+                break
             # 执行函数
             y = eval(input1)
             Tool.plots(y)
+        if flag == False:
+            continue
         # 打开函数
         Tool.open()
     except Exception as ex:
         with open('ERROR.log', 'a') as f:
             f.write('错误:' + str(ex) + '(Time:' + asctime() + ')' + '\n')
+        plt.close()
