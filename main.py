@@ -77,6 +77,7 @@ while True:
             y = eval(input1)
             Tool.plots(y)
         if flag == False:
+            flag = True
             continue
         # 打开函数
         Tool.open()
